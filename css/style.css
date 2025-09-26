@@ -1,0 +1,341 @@
+/* ===== CONFIGURAÇÕES GERAIS E VARIÁVEIS ===== */
+:root {
+    --primary-color: #121212; /* Um preto/cinza escuro moderno */
+    --secondary-color: #00aaff; /* Um azul vibrante para destaque */
+    --text-color: #e0e0e0; /* Um cinza claro para texto */
+    --text-muted: #a0a0a0; /* Um cinza mais suave */
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links internos */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===== ESTILOS DA SEÇÃO HERO ===== */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; /* Ocupa a altura inteira da tela */
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Tamanho de fonte responsivo */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--secondary-color);
+}
+
+.hero-content h3 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+
+/* ===== ESTILOS DA SEÇÃO SOBRE MIM ===== */
+.about {
+    padding: 80px 20px; /* Espaçamento interno da seção */
+    background-color: #1a1a1a; /* Um fundo um pouco diferente para destacar */
+}
+
+.about-container {
+    max-width: 1100px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px; /* Espaço entre o texto e as habilidades */
+}
+
+.about-text {
+    flex-basis: 65%; /* O texto ocupa 65% do espaço */
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.about-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.about-skills {
+    flex-basis: 30%; /* As habilidades ocupam 30% */
+}
+
+.about-skills h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.about-skills ul {
+    list-style: none; /* Remove os pontos da lista */
+}
+
+.about-skills li {
+    background-color: #2a2a2a;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.about-skills li:hover {
+    transform: translateX(5px); /* Efeito sutil ao passar o mouse */
+}
+
+
+/* ===== ESTILOS DA SEÇÃO PROJETOS ===== */
+.projects {
+    padding: 80px 20px;
+    background-color: var(--primary-color);
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.projects h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden; /* Garante que a imagem não vaze */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    overflow: hidden;
+    display: flex; /* Para centralizar a imagem */
+    justify-content: center;
+    align-items: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre o espaço sem distorcer */
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.project-tech span {
+    display: inline-block;
+    background-color: #2a2a2a;
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.project-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+
+/* ===== ESTILOS DA SEÇÃO DE CONTATO ===== */
+.contact {
+    padding: 80px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.contact p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.social-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* ===== RODAPÉ ===== */
+footer {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid #2a2a2a;
+}
+
+
+/* ===== AJUSTES PARA CELULAR (RESPONSIVIDADE) ===== */
+@media (max-width: 768px) {
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .about-container {
+        flex-direction: column; /* Coloca o texto e as habilidades um em cima do outro */
+    }
+
+    .about-text, .about-skills {
+        flex-basis: 100%; /* Fazem ambos ocuparem 100% da largura */
+    }
+
+    .about-skills {
+        margin-top: 30px;
+    }
+}
